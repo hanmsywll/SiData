@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>SiData</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/LogoSiDataTitle.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="<link rel=" preconnect href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: FlexStart
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.php" class="logo d-flex align-items-center">
+        <img src="assets/img/LogoSiData.png" alt="">
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
+          <li><a class="nav-link scrollto" href="#main">Fitur Kami</a></li>
+          <li><a href="dashboard.php"> Buat Survei </a></li>
+          <li><a class="nav-link scrollto" href="isisurvei.php">Isi Survei</a></li>
+          <li><a class="nav-link scrollto" href="peringkat.php">Peringkat</a></li>
+          <?php
+          session_start(); // start the session
+          // check if the user is logged in
+          if (isset($_SESSION['nama'])) {
+            // if logged in, show the username and a dropdown to logout
+            echo '<div class="dropdown me-4 ">
+                                      <a class=" getstarted scrollto  id="dropdownMenuButton" data-bs-toggle="dropdown"  aria-expanded="false" style="background-color: #ffffff; color: #0474BA;">
+                                                <li><hr class="dropdown-divider"></li>
+                                                <li><hr class="dropdown-divider"></li>
+                                               <img src="assets/img/profile-fill.png" width="20"> &nbsp; ' . $_SESSION['nama'] . '
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                <li><a class="dropdown-item" href="profile.php">Profile<img src="assets/img/profile-stroke.png" width="20"></a></li>
+                                                <li><hr class="dropdown-divider"></li>
+                                                <li><a class="dropdown-item" href="logout.php">Logout<img src="assets/img/logout.png" width="20"></a></li>
+                                            </ul>
+                                        </div>';
+          } else {
+            // if not logged in, show the login button
+            echo '<li><a class="getstarted scrollto" href="login.php">Login</a></li>
+                        </ul>';
+          }
+          ?>
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">Kumpulkan responden jauh lebih mudah dengan SiData!</h1>
+          <h5 data-aos="fade-up" data-aos-delay="400">SiData merupakan Aplikasi Pembuatan, Penyebaran, dan Pengisian
+            Survei Online untuk Penelitian Mahasiswa.</h5>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a href="dashboard.php"
+                class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+                style="background-color: #0474BA;">
+                <span> Coba Buat Survei-mu Gratis!</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="assets/img/buathome.png" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= Values Section ======= -->
+    <section id="values" class="values">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Fitur SiData</h2>
+          <p>3 Fitur Utama</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <a href="dashboard.php" style="text-decoration: none; color: inherit;">
+              <div class="box">
+                <img src="assets/img/buatsurvei.png" class="img-fluid" alt="">
+                <h3>Buat Survei</h3>
+                <p>Fitur Buat Survei bisa bikin survei sendiri dengan mudah dan cepat. Kamu bisa pilih jenis survei,
+                  pertanyaan, dan pilihan jawaban. Survei bisa dipakai untuk berbagai keperluan, seperti mengumpulkan
+                  masukan dari masyarakat, melakukan penelitian, atau mengukur kepuasan pelanggan.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+            <a href="isisurvei.php" style="text-decoration: none; color: inherit;">
+              <div class="box">
+                <img src="assets/img/isisurvei.png" class="img-fluid" alt="">
+                <h3>Isi Survei</h3>
+                <p>Fitur Isi Survei bisa isi survei yang dibuat oleh orang lain. Kamu bisa pilih opsi jawaban yang
+                  tersedia. Survei bisa diisi secara anonim atau dengan menyertakan informasi identitas.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+            <a href="peringkat.php" style="text-decoration: none; color: inherit;">
+              <div class="box">
+                <img src="assets/img/au.png" class="img-fluid" alt="">
+                <h3>Peringkat</h3>
+                <p>Fitur peringkat memungkinkan kamu untuk bisa melihat para top user yang sering aktif membuat dan
+                  mengisi survei termasuk dirimu juga lho~</p>
+              </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Values Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+
+    <div class="container" data-aos="fade-up">
+
+      <header class="section-header">
+        <h2>Tim</h2>
+        <p>Kelompok 4</p>
+      </header>
+
+      <div class="row gy-4">
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="member">
+            <div class="member-img">
+              <img src="assets/img/team/mahes.png" class="img-fluid" alt="">
+              <div class="social">
+                <a href="https://www.instagram.com/maheswrm/"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/maheswari-maharani-50350a196/"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>Maheswari Maharani Mahfud</h4>
+              <span>Member</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+          <div class="member">
+            <div class="member-img">
+              <img src="assets/img/team/raihan.png" class="img-fluid" alt="">
+              <div class="social">
+                <a href="https://www.instagram.com/raihansyawaal/"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/raihan-muhamad-syawal-948729194/"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>Raihan Muhamad Syawal</h4>
+              <span>Member</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="member">
+            <div class="member-img">
+              <img src="assets/img/team/salma.png" class="img-fluid" alt="">
+              <div class="social">
+                <a href="https://www.instagram.com/salmaniiid_/"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/salma-nida-ul-jannah/"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>Salma Nida Ul Jannah</h4>
+              <span>Member</span>
+                  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section><!-- End Team Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Kontak</h2>
+          <p>Hubungi Kami</p>
+        </header>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Alamat</h3>
+                  <p>Jl. Telekomunikasi<br>Jawa Barat, Indonesia</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Telepon</h3>
+                  <p>+62 8528 3492 45866<br>+62 6678 254445 41</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Email</h3>
+                  <p>sidata@gmail.com</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-clock"></i>
+                  <h3>Jam Kerja</h3>
+                  <p>Senin - Jumat<br>09:00 WIB  - 17:00 WIB</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <form action="forms/contact.php" method="post" class="php-email-form">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" required>
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subjek" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Pesan" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit" style="background-color: #0474BA;">Kirim Pesan</button>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="assets/img/LogoSiData.png" alt="">
+              <!-- <span>SiData</span> -->
+            </a>
+            <p>SiData merupakan Aplikasi Pembuatan, Penyebaran, dan Pengisian Survei Online untuk Penelitian Mahasiswa.</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#main">Fitur Kami</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="dashboard.php">Buat Survei</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="isisurvei.php">Isi Survei</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="peringkat.php">Peringkat</a></li>
+            </ul>
+          </div>
+
+          <!-- <div class="col-lg-2 col-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div> -->
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Hubungi Kami</h4>
+            <p>
+              Jl. Telekomunikasi <br>
+              Bandung, Jawa Barat<br>
+              Indonesia <br><br>
+              <strong>Phone:</strong> +62 8528 3492 45866<br>
+              <strong>Email:</strong> sidata@gmail.com<br>
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>FlexStart</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits"> -->
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div> -->
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center" style="background-color: #0474BA;"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
